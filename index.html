@@ -5,37 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HigiLar Santa Maria | Higienização de Estofados</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Fontes do Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- NAV BAR (Cabeçalho) -->
-    <header class="navbar">
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
         <div class="container nav-container">
-            <div class="logo">
-                <span class="logo-higi">Higi</span><span class="logo-lar">Lar</span>
-                <small>Santa Maria</small>
-            </div>
-            <nav class="nav-menu">
+            <a href="#inicio" class="logo">
+                <div class="logo-mark">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                        <circle cx="18" cy="18" r="18" fill="#00B4D8" opacity="0.15"/>
+                        <path d="M10 22 Q14 12 18 16 Q22 20 26 10" stroke="#00B4D8" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                        <circle cx="18" cy="26" r="3" fill="#00B4D8"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-name"><span class="logo-higi">Higi</span><span class="logo-lar">Lar</span></span>
+                    <small>Santa Maria</small>
+                </div>
+            </a>
+            <nav class="nav-menu" id="navMenu">
                 <a href="#inicio">Início</a>
                 <a href="#servicos">Serviços</a>
-                <a href="#beneficios">Benefícios</a>
-                <a href="#contato" class="btn-nav">Orçamento Grátis</a>
+                <a href="#beneficios">Diferenciais</a>
+                <a href="#depoimentos">Avaliações</a>
+                <a href="https://wa.me/5555981187413?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20higienização." target="_blank" class="btn-nav">💬 Orçamento Grátis</a>
             </nav>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
 
-    <!-- HERO SECTION (Banner Principal) -->
+    <!-- HERO -->
     <section id="inicio" class="hero">
+        <canvas id="heroCanvas"></canvas>
+        <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <h1>Seu estofado novo, <br><span class="highlight">limpo e protegido</span></h1>
-            <p>Elimine sujeiras, ácaros e mau odor com o atendimento especializado da HigiLar no conforto da sua casa em Santa Maria.</p>
+            <div class="hero-badge">✦ Atendimento em Santa Maria e região</div>
+            <h1>Seu estofado<br><span class="highlight">limpo, protegido</span><br>e como novo.</h1>
+            <p>Eliminamos ácaros, manchas e mau odor com equipamentos profissionais — no conforto da sua casa, sem complicação.</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <strong class="counter" data-target="6000">0</strong><strong>+</strong>
+                    <span>Clientes atendidos</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <strong class="counter" data-target="11">0</strong><strong>+</strong>
+                    <span>Anos de experiência</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <strong>100%</strong>
+                    <span>Satisfação garantida</span>
+                </div>
+            </div>
             <div class="hero-buttons">
-                <a href="https://wa.me/5555981187413" target="_blank" class="btn btn-primary">Agendar pelo WhatsApp</a>
-                <a href="#servicos" class="btn btn-secondary">Conhecer Serviços</a>
+                <a href="https://wa.me/5555981187413?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20higienização." target="_blank" class="btn btn-primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                    Agendar pelo WhatsApp
+                </a>
+                <a href="#servicos" class="btn btn-ghost">Ver os serviços ↓</a>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <span>Role para baixo</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- PROCESSO -->
+    <section class="process">
+        <div class="container process-container">
+            <div class="process-step">
+                <div class="process-number">01</div>
+                <div>
+                    <h4>Você faz o contato</h4>
+                    <p>Mande mensagem no WhatsApp e informe o que precisa higienizar.</p>
+                </div>
+            </div>
+            <div class="process-arrow">→</div>
+            <div class="process-step">
+                <div class="process-number">02</div>
+                <div>
+                    <h4>Agendamos a visita</h4>
+                    <p>Escolhemos um horário que funcione para você, sem enrolação.</p>
+                </div>
+            </div>
+            <div class="process-arrow">→</div>
+            <div class="process-step">
+                <div class="process-number">03</div>
+                <div>
+                    <h4>Fazemos o serviço</h4>
+                    <p>Vamos até sua casa com todo o equipamento. Você só aproveita o resultado.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -43,79 +110,266 @@
     <!-- SERVIÇOS -->
     <section id="servicos" class="services">
         <div class="container">
-            <h2 class="section-title">O Que Nós Fazemos</h2>
-            <p class="section-subtitle">Soluções completas de limpeza profunda e conservação</p>
-            
+            <p class="section-eyebrow">O que fazemos</p>
+            <h2 class="section-title">Soluções completas de<br>limpeza profunda</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🛋️</div>
+                    <div class="service-visual">
+                        <div class="service-icon-wrap" style="--card-color: #00B4D8;">🛋️</div>
+                    </div>
                     <h3>Higienização de Sofás</h3>
-                    <p>Remoção profunda de manchas, poeira e microrganismos de todos os tipos de tecidos.</p>
+                    <p>Remoção profunda de manchas, poeira e microrganismos em todos os tipos de tecidos e couros.</p>
+                    <span class="service-tag">Mais procurado</span>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🚗</div>
+                    <div class="service-visual">
+                        <div class="service-icon-wrap" style="--card-color: #4CC9F0;">🚗</div>
+                    </div>
                     <h3>Limpeza Automotiva</h3>
                     <p>Higienização completa dos bancos e carpetes do seu veículo, devolvendo o cheiro de novo.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🛏️</div>
+                    <div class="service-visual">
+                        <div class="service-icon-wrap" style="--card-color: #7B2FBE;">🛏️</div>
+                    </div>
                     <h3>Higienização de Colchões</h3>
-                    <p>Tratamento especial antiácaro e antibacteriano para garantir noites de sono muito mais saudáveis.</p>
+                    <p>Tratamento antiácaro e antibacteriano para noites de sono mais saudáveis e livres de alérgenos.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🛡️</div>
+                    <div class="service-visual">
+                        <div class="service-icon-wrap" style="--card-color: #D4AF37;">🛡️</div>
+                    </div>
                     <h3>Impermeabilização</h3>
-                    <p>Proteção extra contra líquidos e respingos, aumentando drasticamente a vida útil do estofado.</p>
+                    <p>Proteção extra contra líquidos que aumenta a vida útil do estofado e facilita a limpeza futura.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- BENEFÍCIOS / DIFERENCIAIS -->
+    <!-- BENEFÍCIOS -->
     <section id="beneficios" class="benefits">
         <div class="container benefits-wrapper">
             <div class="benefits-text">
-                <h2 class="section-title text-left">Por que escolher a HigiLar?</h2>
-                <ul>
-                    <li>
-                        <strong>✨ Produtos Regulamentados:</strong> Utilizados apenas produtos biodegradáveis e aprovados pela ANVISA, seguros para crianças e pets.
-                    </li>
-                    <li>
-                        <strong>🏡 Atendimento a Domicílio:</strong> Realizamos todo o serviço na sua residência ou empresa com o máximo de agilidade e discrição.
-                    </li>
-                    <li>
-                        <strong>⏱️ Secagem Rápida:</strong> Nossas extratoras profissionais removem até 95% da água, acelerando o tempo de secagem.
-                    </li>
-                </ul>
+                <p class="section-eyebrow light">Por que nos escolher</p>
+                <h2 class="section-title text-left light">A diferença está<br>nos detalhes</h2>
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">✨</div>
+                        <div>
+                            <h4>Produtos Regulamentados pela ANVISA</h4>
+                            <p>Biodegradáveis e seguros para crianças, animais de estimação e pessoas com alergias.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🏡</div>
+                        <div>
+                            <h4>Atendimento a Domicílio</h4>
+                            <p>Todo o serviço é realizado na sua residência ou empresa, com agilidade e discrição.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">⚡</div>
+                        <div>
+                            <h4>Secagem Ultra-Rápida</h4>
+                            <p>Nossas extratoras profissionais removem até 95% da umidade — seu estofado seca em horas.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="benefits-badge">
-                <div class="badge-content">
-                    <h3>100%</h3>
-                    <p>Garantia de Satisfação</p>
+            <div class="benefits-visual">
+                <div class="visual-card">
+                    <div class="visual-card-inner">
+                        <div class="visual-icon">🏆</div>
+                        <strong>Garantia de<br>Satisfação Total</strong>
+                        <p>Não ficou satisfeito? Resolvemos. Simples assim.</p>
+                    </div>
+                    <div class="visual-card-glow"></div>
+                </div>
+                <div class="floating-badge badge-1">✓ ANVISA</div>
+                <div class="floating-badge badge-2">⭐ 5 estrelas</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos" class="testimonials">
+        <div class="container">
+            <p class="section-eyebrow">O que dizem nossos clientes</p>
+            <h2 class="section-title">Resultados que falam<br>por si mesmos</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Meu sofá estava com manchas que eu achava que nunca sairiam. Ficou perfeito! Equipe muito profissional e pontual."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div>
+                            <strong>Ana Paula S.</strong>
+                            <span>Santa Maria, RS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card featured">
+                    <div class="stars">★★★★★</div>
+                    <p>"Tenho dois cachorros e o cheiro do sofá estava terrível. Após o serviço da HigiLar ficou como novo! Super recomendo para quem tem pets."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">R</div>
+                        <div>
+                            <strong>Roberto M.</strong>
+                            <span>Santa Maria, RS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Fiz a higienização dos bancos do carro. Resultado incrível, pareceu que comprei um carro novo. Preço justo e serviço rápido."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">C</div>
+                        <div>
+                            <strong>Carlos E.</strong>
+                            <span>Santa Maria, RS</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CHAMADA PARA AÇÃO (CTA / CONTATO) -->
+    <!-- CTA FINAL -->
     <section id="contato" class="cta">
-        <div class="container">
-            <h2>Pronto para renovar o seu ambiente?</h2>
-            <p>Fale conosco agora mesmo pelo WhatsApp e receba um orçamento sem compromisso em poucos minutos.</p>
-            <!-- Lembre-se de trocar o número de telefone no link abaixo -->
+        <div class="cta-bg-pattern"></div>
+        <div class="container cta-content">
+            <p class="section-eyebrow light">Pronto para começar?</p>
+            <h2>Renove seu ambiente<br>ainda esta semana</h2>
+            <p>Orçamento gratuito, sem compromisso. Resposta em minutos.</p>
             <a href="https://wa.me/5555981187413?text=Olá,%20gostaria%20de%20um%20orçamento%20para%20higienização." target="_blank" class="btn btn-whatsapp">
-                💬 Solicitar Orçamento Grátis
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                Solicitar Orçamento Grátis
             </a>
+            <p class="cta-note">📍 Atendemos Santa Maria e região • Seg–Sáb, 8h–18h</p>
         </div>
     </section>
 
-    <!-- RODAPÉ -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer-content">
-            <p>&copy; 2015 HigiLar Santa Maria. Todos os direitos reservados.</p>
+            <div class="footer-logo">
+                <span class="logo-higi">Higi</span><span class="logo-lar">Lar</span>
+                <small>Santa Maria</small>
+            </div>
+            <p>&copy; 2015–2025 HigiLar Santa Maria. Todos os direitos reservados.</p>
             <p>Atendimento em Santa Maria - RS e região.</p>
         </div>
     </footer>
 
+    <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('open');
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('open');
+        });
+    });
+
+    // Animated counters
+    const counters = document.querySelectorAll('.counter');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = +el.dataset.target;
+                let count = 0;
+                const step = target / 60;
+                const timer = setInterval(() => {
+                    count = Math.min(count + step, target);
+                    el.textContent = Math.floor(count);
+                    if (count >= target) clearInterval(timer);
+                }, 25);
+                observer.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+    counters.forEach(c => observer.observe(c));
+
+    // Bubble canvas animation
+    const canvas = document.getElementById('heroCanvas');
+    const ctx = canvas.getContext('2d');
+    let bubbles = [];
+
+    function resize() {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+    }
+
+    function createBubble() {
+        return {
+            x: Math.random() * canvas.width,
+            y: canvas.height + 20,
+            r: Math.random() * 18 + 4,
+            speed: Math.random() * 0.6 + 0.2,
+            opacity: Math.random() * 0.15 + 0.04,
+            wobble: Math.random() * Math.PI * 2,
+            wobbleSpeed: (Math.random() - 0.5) * 0.03
+        };
+    }
+
+    function initBubbles() {
+        bubbles = [];
+        for (let i = 0; i < 28; i++) {
+            const b = createBubble();
+            b.y = Math.random() * canvas.height;
+            bubbles.push(b);
+        }
+    }
+
+    function animateBubbles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        bubbles.forEach((b, i) => {
+            b.y -= b.speed;
+            b.wobble += b.wobbleSpeed;
+            b.x += Math.sin(b.wobble) * 0.5;
+            ctx.beginPath();
+            ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+            ctx.strokeStyle = `rgba(0, 180, 216, ${b.opacity})`;
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+            // Shine
+            ctx.beginPath();
+            ctx.arc(b.x - b.r * 0.3, b.y - b.r * 0.3, b.r * 0.2, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(255,255,255,${b.opacity * 1.5})`;
+            ctx.fill();
+            if (b.y < -20) bubbles[i] = createBubble();
+        });
+        requestAnimationFrame(animateBubbles);
+    }
+
+    resize();
+    initBubbles();
+    animateBubbles();
+    window.addEventListener('resize', () => { resize(); initBubbles(); });
+
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.service-card, .benefit-item, .testimonial-card, .process-step');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => { el.classList.add('will-reveal'); revealObserver.observe(el); });
+    </script>
 </body>
 </html>
